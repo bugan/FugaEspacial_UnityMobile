@@ -10,9 +10,10 @@ public class MixerVolume : MonoBehaviour {
     [SerializeField]
     private string parametro;
 
-    public void MudarAudio(float config)
+    public void MudarVolume(float valorSlider)
     {
-        var volume = Mathf.Lerp(-60, 0, config);
+        var volume = Mathf.Lerp(-60, 10, valorSlider);
         this.mixer.SetFloat(parametro, volume);
+        
     }
 }

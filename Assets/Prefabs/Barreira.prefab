@@ -20,7 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4631253430628302}
   - component: {fileID: 212065119794344772}
-  - component: {fileID: 61673710236126696}
+  - component: {fileID: 114136742244525726}
+  - component: {fileID: 50461013527044660}
+  - component: {fileID: 114061086834470542}
+  - component: {fileID: 60039039640840534}
   m_Layer: 0
   m_Name: Barreira
   m_TagString: Untagged
@@ -35,14 +38,34 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288704199317362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.39, y: 0.3, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: -5.43, y: 3.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1.539896}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61673710236126696
-BoxCollider2D:
+--- !u!50 &50461013527044660
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1288704199317362}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &60039039640840534
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -53,19 +76,111 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0038519613, y: 0.011556029}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 2.15, y: 2.11}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.18546268, y: 0.21627843}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.225, y: -1.005}
+      - {x: 0.325, y: -0.97499996}
+      - {x: 0.355, y: -0.965}
+      - {x: 0.49499997, y: -0.92499995}
+      - {x: 0.66499996, y: -0.875}
+      - {x: 0.765, y: -0.765}
+      - {x: 1.055, y: -0.39499998}
+      - {x: 1.0649999, y: -0.24499999}
+      - {x: 1.0749999, y: -0.074999996}
+      - {x: 1.0749999, y: 0.345}
+      - {x: 1.015, y: 0.42499998}
+      - {x: 0.905, y: 0.565}
+      - {x: 0.715, y: 0.79499996}
+      - {x: 0.635, y: 0.885}
+      - {x: 0.615, y: 0.895}
+      - {x: 0.515, y: 0.92499995}
+      - {x: 0.13499999, y: 1.055}
+      - {x: -0.055, y: 1.055}
+      - {x: -0.225, y: 0.995}
+      - {x: -0.36499998, y: 0.965}
+      - {x: -0.505, y: 0.905}
+      - {x: -0.705, y: 0.85499996}
+      - {x: -0.775, y: 0.79499996}
+      - {x: -0.825, y: 0.715}
+      - {x: -1.0749999, y: 0.375}
+      - {x: -1.0749999, y: -0.044999998}
+      - {x: -1.0649999, y: -0.225}
+      - {x: -1.055, y: -0.305}
+      - {x: -0.995, y: -0.445}
+      - {x: -0.955, y: -0.53499997}
+      - {x: -0.905, y: -0.645}
+      - {x: -0.815, y: -0.84499997}
+      - {x: -0.765, y: -0.955}
+      - {x: -0.72499996, y: -1.005}
+      - {x: -0.645, y: -1.015}
+      - {x: -0.445, y: -1.035}
+      - {x: -0.235, y: -1.055}
+      - {x: 0.055, y: -1.055}
+      - {x: 0.085, y: -1.045}
+--- !u!114 &114061086834470542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1288704199317362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c824bdcb35c3d4cb6aa6bf73f4cb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aoBater:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114136742244525726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1288704199317362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c824bdcb35c3d4cb6aa6bf73f4cb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aoBater:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &212065119794344772
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -100,7 +215,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fec6eea06620bb44c83ff56a533b1e65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5d7ca4718cadf6d49ab5a637f89d147e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

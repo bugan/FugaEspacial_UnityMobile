@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SegueMouse : MonoBehaviour
 {
+    private const float DISTANCIA_MAXIMA = .5f;
     [SerializeField]
     private float velocidade;
     private Vector3 posicao;
@@ -19,13 +20,16 @@ public class SegueMouse : MonoBehaviour
         this.posicao = Input.mousePosition;
 
         var destino = Camera.main.ScreenToWorldPoint(this.posicao);
-        if(Vector3.Distance(this.transform.position, destino) > .5f)
+        if (this.EstaMuitoLonge(destino))
         {
-            Vector2 direcao = destino - this.transform.position;            
+            Vector2 direcao = destino - this.transform.position;
             this.transform.position += (Vector3)(direcao * velocidade * Time.deltaTime);
         }
 
     }
 
-
+    private bool EstaMuitoLonge(Vector3 destino)
+    {
+        return Vector3.Distance(this.transform.position, destino) > DISTANCIA_MAXIMA;
+    }
 }

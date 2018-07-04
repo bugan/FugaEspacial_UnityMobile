@@ -4,23 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PegarUltimoNome : MonoBehaviour {
-
-    
-    private InputField inputNome;
+    private InputField entradaNome;
 
     private void Awake()
     {
-        this.inputNome = this.GetComponent<InputField>();    
+        this.entradaNome = this.GetComponent<InputField>();    
     }
 
     private void Start () {
-        var ultimoNome = "Jogagor";
-        if (PlayerPrefs.HasKey("UltimoNome"))
-        {
-            ultimoNome = PlayerPrefs.GetString("UltimoNome");
-        }
-
-        this.inputNome.text = ultimoNome;
+        this.entradaNome.text = NovaPontuacao.GetUltimoNome();
     }
 
 }

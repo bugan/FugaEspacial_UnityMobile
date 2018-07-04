@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 public class MixerVolume : MonoBehaviour {
+    private const float VOLUME_MINIMO = -80;
+    private const float VOLUME_MAXIMO = 10;
 
     [SerializeField]
     private AudioMixer mixer;
@@ -12,7 +14,7 @@ public class MixerVolume : MonoBehaviour {
 
     public void MudarVolume(float valorSlider)
     {
-        var volume = Mathf.Lerp(-60, 10, valorSlider);
+        var volume = Mathf.Lerp(VOLUME_MINIMO, VOLUME_MAXIMO, valorSlider);
         this.mixer.SetFloat(parametro, volume);
         
     }

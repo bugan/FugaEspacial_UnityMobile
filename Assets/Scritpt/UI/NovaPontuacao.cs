@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class NovaPontuacao : MonoBehaviour {
+    private const int VALOR_DE_ERRO = -1;
+    public const string CHAVE_ULTIMO_NOME = "UltimoNome";
+    public const string NOME_PADRAO = "Jogagor";
+
     [SerializeField]
     private Ranking ranking;
     [SerializeField]
@@ -14,23 +18,42 @@ public class NovaPontuacao : MonoBehaviour {
     private int index;
     private int totalDePontos;
 
-    void Start () {
-        this.totalDePontos = -1;
-        if (Pontuacao.Instancia != null)
-        {
-            this.totalDePontos = Pontuacao.Instancia.Pontos;
-        }
+    void Start ()
+    {
+        this.totalDePontos = GetPontuacao();
+        string ultimoNome = GetUltimoNome();
 
         this.pontos.text = this.totalDePontos.ToString();
+        this.nome.text = ultimoNome;
 
-        var ultimoNome = "Jogagor";
-        if (PlayerPrefs.HasKey("UltimoNome"))
+        this.Salvar(ultimoNome);
+    }
+
+    private static int GetPontuacao()
+    {
+        var totalDePontos = VALOR_DE_ERRO;
+        if (ExistePontuacao())
         {
-            ultimoNome = PlayerPrefs.GetString("UltimoNome");
+            totalDePontos = Pontuacao.Instancia.Pontos;
         }
 
-        this.nome.text = ultimoNome;
-        this.Salvar(ultimoNome);
+        return totalDePontos;
+    }
+
+    public static string GetUltimoNome()
+    {
+        var ultimoNome = NOME_PADRAO;
+        if (PlayerPrefs.HasKey(CHAVE_ULTIMO_NOME))
+        {
+            ultimoNome = PlayerPrefs.GetString(CHAVE_ULTIMO_NOME);
+        }
+
+        return ultimoNome;
+    }
+
+    private static bool ExistePontuacao()
+    {
+        return Pontuacao.Instancia != null;
     }
 
     public void AlterarNome(string nome)
@@ -38,7 +61,7 @@ public class NovaPontuacao : MonoBehaviour {
         this.nome.text = nome;
         this.ranking.AlterarNome(nome, index);
         
-        PlayerPrefs.SetString("UltimoNome", nome);
+        PlayerPrefs.SetString(CHAVE_ULTIMO_NOME, nome);
     }
 
     private void Salvar(string nome)

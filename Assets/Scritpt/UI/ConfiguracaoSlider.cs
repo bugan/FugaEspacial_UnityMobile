@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
-public class ConfiguracaoSlider : MonoBehaviour {
+public class ConfiguracaoSlider : MonoBehaviour
+{
+    private const float VALOR_PADRAO = 0.85f;
+
     [SerializeField]
-    private string parametro;
-    [SerializeField]
-    private float valorPadrao = 0.85f;
+    private string parametro;   
 
     private Slider slider;
 
@@ -16,19 +17,23 @@ public class ConfiguracaoSlider : MonoBehaviour {
         this.slider = this.GetComponent<Slider>();
     }
 
-    private void Start () {
-        if (PlayerPrefs.HasKey(this.parametro))
-        {
-            this.slider.value = PlayerPrefs.GetFloat(this.parametro);
-        }
-        else
-        {
-            this.slider.value = this.valorPadrao;
-        }
-	}
-	
-	public void AtualizarValorSalvo(float novoValor)
+    private void Start()
+    {
+        this.slider.value = this.GetValorPadrao();
+    }
+
+    public void AtualizarValorSalvo(float novoValor)
     {
         PlayerPrefs.SetFloat(this.parametro, novoValor);
+    }
+
+    private float GetValorPadrao()
+    {
+        if (PlayerPrefs.HasKey(this.parametro))
+        {
+            return PlayerPrefs.GetFloat(this.parametro);
+        }
+
+        return VALOR_PADRAO;
     }
 }

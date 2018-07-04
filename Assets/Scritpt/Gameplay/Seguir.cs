@@ -17,18 +17,22 @@ public class Seguir : MonoBehaviour
         this.fisica = this.GetComponent<Rigidbody2D>();
     }
 
-
     private void FixedUpdate()
     {
-        if (this.alvo == null) return;
+        if (this.NaoTenhoAlvo()) return;
 
         var direcaoDesejada = (Vector2)(this.alvo.position - this.transform.position);
         direcaoDesejada = direcaoDesejada.normalized;
         direcaoDesejada *= velocidadeMaxima;
-        
-        var forcaDeManobra = direcaoDesejada - this.fisica.velocity; 
+
+        var forcaDeManobra = direcaoDesejada - this.fisica.velocity;
 
         this.fisica.AddForce(forcaDeManobra, ForceMode2D.Force);
+    }
+
+    private bool NaoTenhoAlvo()
+    {
+        return this.alvo == null;
     }
 
     public void SetAlvo(Transform novoAlvo)

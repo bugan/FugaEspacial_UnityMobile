@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Gerador : MonoBehaviour
 {
+
     [SerializeField]
     private Transform alvo;
     [SerializeField]
@@ -12,6 +13,7 @@ public class Gerador : MonoBehaviour
     [SerializeField]
     private Pool pool;
     
+    private Color corDoGuizmo = new Color(255, 0, 150, .5f);
 
     private void Start()
     {
@@ -21,24 +23,34 @@ public class Gerador : MonoBehaviour
     private void Instanciar()
     {
         var inimigo = this.pool.PegarObjeto();
-        if (inimigo != null)
+        if (InimigoExiste(inimigo))
         {
-            var gobj = inimigo.gameObject;
-
-            var posicaoAleatoria = new Vector3(
-                Random.Range(this.area.x, this.area.x + this.area.width),
-                Random.Range(this.area.y, this.area.y + this.area.height),
-                0);
-
-            var posicaoInimigo = this.transform.position + posicaoAleatoria;
-            gobj.transform.position = posicaoInimigo;
-            gobj.GetComponent<Seguir>().SetAlvo(this.alvo);
+            var gameObjectDoInimigo = inimigo.gameObject;
+            this.DefinirPosicaoInimigo(gameObjectDoInimigo);
+            gameObjectDoInimigo.GetComponent<Seguir>().SetAlvo(this.alvo);
         }
+    }
+
+    private void DefinirPosicaoInimigo(GameObject inimigo)
+    {
+        var posicaoAleatoria = new Vector3(
+                        Random.Range(this.area.x, this.area.x + this.area.width),
+                        Random.Range(this.area.y, this.area.y + this.area.height),
+                        0);
+
+        var posicaoInimigo = this.transform.position + posicaoAleatoria;
+        inimigo.transform.position = posicaoInimigo;
+    }
+
+    private bool InimigoExiste(ObjetoDePool inimigo)
+    {
+        return inimigo != null;
     }
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = new Color(255, 0, 150, .5f);
+        Gizmos.color = corDoGuizmo;
+
         var posicao = new Vector3(
             this.transform.position.x + this.area.x + this.area.width/2,
             this.transform.position.y + this.area.y + this.area.height / 2,

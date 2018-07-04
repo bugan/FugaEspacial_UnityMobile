@@ -14,14 +14,19 @@ public class Pontuacao : MonoBehaviour {
     {
         get
         {
-            if(_instancia == null)
+            if (NaoFoiInicializado())
             {
                 _instancia = FindObjectOfType<Pontuacao>();
             }
             return _instancia;
         }
     }
-    
+
+    private static bool NaoFoiInicializado()
+    {
+        return _instancia == null;
+    }
+
     public void Pontuar()
     {
         this.Pontos++;

@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class Ranking : MonoBehaviour
 {
-    private string arquivo = "ranking.json";
+    private const string NOME_DO_ARQUIVO = "ranking.json";
 
     public ListaColocados ListaColocados { get; private set; }
 
     private void Awake()
     {
-        string caminhoArquivo = Path.Combine(Application.persistentDataPath, this.arquivo);
+        string caminhoArquivo = Path.Combine(Application.persistentDataPath, NOME_DO_ARQUIVO);
 
         if (File.Exists(caminhoArquivo))
         {
@@ -33,7 +33,7 @@ public class Ranking : MonoBehaviour
 
     public void SalvarColocacao()
     {
-        string caminhoArquivo = Path.Combine(Application.persistentDataPath, this.arquivo);
+        string caminhoArquivo = Path.Combine(Application.persistentDataPath, NOME_DO_ARQUIVO);
         File.WriteAllText(caminhoArquivo, JsonUtility.ToJson(this.ListaColocados));
     }
 
@@ -52,8 +52,9 @@ public class Ranking : MonoBehaviour
 [Serializable]
 public class ListaColocados
 {
+    private const int INDEX_PADRAO = -1;
     public int tamanho;
-    public List<Item> colocados;
+    public readonly List<Item> colocados;
 
     private int index;
 
@@ -67,26 +68,54 @@ public class ListaColocados
 
     public int AdicionarColocado(Item novaEntrada)
     {
-        var index = -1;
+        var index = INDEX_PADRAO;
+        index = GetIndexColocacao(novaEntrada, index);
+
+        this.tamanho++;
+
+        if (NaoEncontrouColocacao(index))
+        {
+            return AdicionarNoFinalDaLista(novaEntrada);
+        }
+        else
+        {
+            return InserirNoLocalCorreto(novaEntrada, index);
+        }
+    }
+
+    private int InserirNoLocalCorreto(Item novaEntrada, int index)
+    {
+        this.colocados.Insert(index, novaEntrada);
+        return index;
+    }
+
+    private int AdicionarNoFinalDaLista(Item novaEntrada)
+    {
+        this.colocados.Add(novaEntrada);
+        return this.colocados.Count - 1;
+    }
+
+    private int GetIndexColocacao(Item novaEntrada, int index)
+    {
         for (var i = this.colocados.Count - 1; i >= 0; i--)
         {
-            if (this.colocados[i].pontos <= novaEntrada.pontos)
+            if (this.MaiorQueElemento(novaEntrada, i))
             {
                 index = i;
             }
         }
 
-        this.tamanho++;
-        if (index == -1)
-        {
-            this.colocados.Add(novaEntrada);
-            return this.colocados.Count - 1;
-        }
-        else
-        {
-            this.colocados.Insert(index, novaEntrada);
-            return index;
-        }
+        return index;
+    }
+
+    private static bool NaoEncontrouColocacao(int index)
+    {
+        return index == INDEX_PADRAO;
+    }
+
+    private bool MaiorQueElemento(Item novaEntrada, int i)
+    {
+        return this.colocados[i].pontos <= novaEntrada.pontos;
     }
 
     public Item GetColocado()

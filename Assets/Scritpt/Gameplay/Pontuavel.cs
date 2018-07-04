@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Pontuavel : MonoBehaviour
 {
+    
 
     public void Pontuar()
     {
         Pontuacao.Instancia.Pontuar();
-        if (PlayerPrefs.GetInt("Vibrar") == 1)
+        if (PlayerPrefs.GetInt(ConfiguracaoVibrar.Vibrar) == 1)
         {
             Handheld.Vibrate();
         }

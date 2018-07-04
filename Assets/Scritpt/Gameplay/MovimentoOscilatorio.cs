@@ -24,13 +24,19 @@ public class MovimentoOscilatorio : MonoBehaviour
     void Update()
     {
         this.angulo += velocidade * Time.deltaTime;
+        float periodo = CalcularPeriodo();
+        this.transform.position = this.posicaoInicial + Vector3.up * amplitude * periodo;
+    }
 
+    private float CalcularPeriodo()
+    {
         var periodo = Mathf.Cos(angulo);
+
         if (this.inverter)
         {
             periodo = Mathf.Sin(angulo);
         }
-        
-        this.transform.position = this.posicaoInicial + Vector3.up * amplitude * periodo;
+
+        return periodo;
     }
 }

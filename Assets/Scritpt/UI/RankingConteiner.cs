@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RankingConteiner : MonoBehaviour
 {
+
+    private const int PRIMEIRO_COLOCADO = 1;
+
     [SerializeField]
     private Ranking ranking;
     [SerializeField]
@@ -21,14 +24,28 @@ public class RankingConteiner : MonoBehaviour
     private void AdicionarItensSalvos()
     {
         var item = this.ranking.GetColocado();
-        var colocacao = 1;
-        while (item != null && colocacao <= this.quantidadeParaMostrar)
+        var colocacao = PRIMEIRO_COLOCADO;
+        while (ItemExite(item) && this.DevoMostar(colocacao))
         {
-            var gobj = GameObject.Instantiate(this.ItemRankPrefab, this.transform);
-            gobj.GetComponent<ItemRanking>().Configurar(colocacao + "°", item.nome, item.pontos);
-
+            this.InstanciarElementoInterface(item, colocacao);
             colocacao++;
             item = this.ranking.ListaColocados.GetColocado();
         }
+    }
+
+    private void InstanciarElementoInterface(Item item, int colocacao)
+    {
+        var itemInterface = GameObject.Instantiate(this.ItemRankPrefab, this.transform);
+        itemInterface.GetComponent<ItemRanking>().Configurar(colocacao + "°", item.nome, item.pontos);
+    }
+
+    private bool DevoMostar(int colocacao)
+    {
+        return colocacao <= this.quantidadeParaMostrar;
+    }
+
+    private static bool ItemExite(Item item)
+    {
+        return item != null;
     }
 }

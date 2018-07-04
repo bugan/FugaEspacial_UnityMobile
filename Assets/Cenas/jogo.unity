@@ -179,7 +179,7 @@ Prefab:
     - target: {fileID: 61276168237055288, guid: 867da2ed13811b347a09b4756abcd004,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212882820194718786, guid: 867da2ed13811b347a09b4756abcd004,
         type: 2}
@@ -1314,7 +1314,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   painelPause: {fileID: 1344085548}
   escalaDeTempoDuranteOPause: 0.005
-  tempoAntesDoPause: 1
+  tempoAntesDeParar: 2
+  tempoAntesDeRetornar: 0.6
 --- !u!1 &1204284998
 GameObject:
   m_ObjectHideFlags: 0

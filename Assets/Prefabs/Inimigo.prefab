@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 0}
-  velocidadeMaxima: 10
+  velocidadeMaxima: 12.65
 --- !u!114 &114376713465450054
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -20,12 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4323434176328768}
   - component: {fileID: 212802863280211838}
-  - component: {fileID: 114984731553289380}
   - component: {fileID: 50205125132585506}
   - component: {fileID: 114250296146273404}
-  - component: {fileID: 114376713465450054}
   - component: {fileID: 61919170566903102}
-  - component: {fileID: 114425755802620984}
+  - component: {fileID: 114961902889299820}
   m_Layer: 8
   m_Name: Inimigo
   m_TagString: Untagged
@@ -104,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alvo: {fileID: 0}
   velocidadeMaxima: 12.65
---- !u!114 &114376713465450054
+--- !u!114 &114961902889299820
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -112,58 +110,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1134229065056836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbfc6f13d1551bc439cc50fc9b5a38ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c5648dc6cb89ce4682dda64b3646daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   aoBater:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114984731553289380}
-        m_MethodName: DevolverParaPool
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114425755802620984}
-        m_MethodName: Pontuar
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114425755802620984
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1134229065056836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12ac2c19feb443c419864d89326b53ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114984731553289380
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1134229065056836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa09ba7d7bb84dd46b75e3a67d934d7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212802863280211838
 SpriteRenderer:
   m_ObjectHideFlags: 1

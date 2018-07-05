@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 public class Pontuacao : MonoBehaviour {
-    public static string TAG_PONTUACAO = "p";
+    public static string TAG_PONTUACAO = "Pontuação";
 
     [SerializeField]
     private EventoDinamicoComInt aoPontuar;

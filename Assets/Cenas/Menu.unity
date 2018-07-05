@@ -639,7 +639,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tremer
+  m_Text: "Vibra\xE7\xE3o"
 --- !u!222 &306300909
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1898,6 +1898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c1daac964896c43ae8e39144194eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sobrescreverExistente: 0
 --- !u!1 &1517546527
 GameObject:
   m_ObjectHideFlags: 0

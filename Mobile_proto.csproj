@@ -255,6 +255,7 @@
     <Compile Include="Assets\Scritpt\UI\PegarUltimoNome.cs" />
     <Compile Include="Assets\Scritpt\UI\RankingConteiner.cs" />
     <Compile Include="Assets\Scritpt\UI\TextoDinamico.cs" />
+    <Compile Include="Assets\Scritpt\UnicaInstancia.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

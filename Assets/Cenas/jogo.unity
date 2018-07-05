@@ -179,7 +179,7 @@ Prefab:
     - target: {fileID: 61276168237055288, guid: 867da2ed13811b347a09b4756abcd004,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212882820194718786, guid: 867da2ed13811b347a09b4756abcd004,
         type: 2}
@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 789197164}
+  pontuacao: {fileID: 511122761}
   tempo: 1
   area:
     serializedVersion: 2
@@ -254,9 +255,10 @@ GameObject:
   - component: {fileID: 511122762}
   - component: {fileID: 511122761}
   - component: {fileID: 511122763}
+  - component: {fileID: 511122764}
   m_Layer: 0
   m_Name: "Pontua\xE7\xE3o"
-  m_TagString: Untagged
+  m_TagString: "Pontua\xE7\xE3o"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -312,6 +314,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a583515351d9c5343a7b74e0835fb60b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &511122764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511122760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c1daac964896c43ae8e39144194eac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &563932336
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 789197164}
+  pontuacao: {fileID: 511122761}
   tempo: 1
   area:
     serializedVersion: 2
@@ -456,11 +470,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4631253430628302, guid: 6fbcc97c6e3854a4bbe5058eacc39e19, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.04
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 4631253430628302, guid: 6fbcc97c6e3854a4bbe5058eacc39e19, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.79
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: 4631253430628302, guid: 6fbcc97c6e3854a4bbe5058eacc39e19, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1300,7 +1314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d13c7ea0f2e8cf9438f368889ab42701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 20
+  velocidade: 10
 --- !u!114 &1057622341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1314,8 +1328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   painelPause: {fileID: 1344085548}
   escalaDeTempoDuranteOPause: 0.005
-  tempoAntesDeParar: 2
-  tempoAntesDeRetornar: 0.6
+  tempoAntesDeParar: 1
+  tempoAntesDeRetornar: 0.1
 --- !u!1 &1204284998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,6 +1463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 789197164}
+  pontuacao: {fileID: 511122761}
   tempo: 1
   area:
     serializedVersion: 2

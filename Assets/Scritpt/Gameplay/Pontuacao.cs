@@ -2,43 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
 public class Pontuacao : MonoBehaviour {
+    public static string TAG_PONTUACAO = "p";
+
     [SerializeField]
     private EventoDinamicoComInt aoPontuar;
-
+    
     public int Pontos { get; private set; }
 
-    private static Pontuacao _instancia;
-    public static Pontuacao Instancia
+    private void Awake()
     {
-        get
-        {
-            if (NaoFoiInicializado())
-            {
-                _instancia = FindObjectOfType<Pontuacao>();
-            }
-            return _instancia;
-        }
-    }
-
-    private static bool NaoFoiInicializado()
-    {
-        return _instancia == null;
+        TAG_PONTUACAO = this.tag;
     }
 
     public void Pontuar()
     {
         this.Pontos++;
         this.aoPontuar.Invoke(this.Pontos);
-    }
-
-    private void Awake()
-    {
-        if(_instancia != null)
-        {
-            GameObject.Destroy(_instancia.gameObject);
-        }
     }
 }
 

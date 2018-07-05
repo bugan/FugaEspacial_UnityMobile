@@ -54,7 +54,7 @@ public class ListaColocados
 {
     private const int INDEX_PADRAO = -1;
     public int tamanho;
-    public readonly List<Item> colocados;
+    public List<Item> colocados;
 
     private int index;
 
@@ -124,8 +124,8 @@ public class ListaColocados
         {
             return null;
         }
-
-        var proximo = this.colocados[index];
+        
+        var proximo = this.colocados[this.index];
         this.index++;
 
         return proximo;

@@ -7,6 +7,8 @@ public class Gerador : MonoBehaviour
     [SerializeField]
     private Transform alvo;
     [SerializeField]
+    private Pontuacao pontuacao;
+    [SerializeField]
     private float tempo;
     [SerializeField]
     private Rect area;
@@ -27,8 +29,14 @@ public class Gerador : MonoBehaviour
         {
             var gameObjectDoInimigo = inimigo.gameObject;
             this.DefinirPosicaoInimigo(gameObjectDoInimigo);
-            gameObjectDoInimigo.GetComponent<Seguir>().SetAlvo(this.alvo);
+            this.InjetarDependencias(gameObjectDoInimigo);
         }
+    }
+
+    private void InjetarDependencias(GameObject gameObjectDoInimigo)
+    {
+        gameObjectDoInimigo.GetComponent<Seguir>().SetAlvo(this.alvo);
+        gameObjectDoInimigo.GetComponent<Pontuavel>().pontuacao = this.pontuacao;
     }
 
     private void DefinirPosicaoInimigo(GameObject inimigo)

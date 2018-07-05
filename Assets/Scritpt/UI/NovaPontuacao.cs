@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NovaPontuacao : MonoBehaviour {
+public class NovaPontuacao : MonoBehaviour
+{
     private const int VALOR_DE_ERRO = -1;
     public const string CHAVE_ULTIMO_NOME = "UltimoNome";
     public const string NOME_PADRAO = "Jogagor";
@@ -17,9 +18,11 @@ public class NovaPontuacao : MonoBehaviour {
 
     private int index;
     private int totalDePontos;
+    private Pontuacao pontuacao;
 
-    void Start ()
+    void Start()
     {
+
         this.totalDePontos = GetPontuacao();
         string ultimoNome = GetUltimoNome();
 
@@ -29,12 +32,19 @@ public class NovaPontuacao : MonoBehaviour {
         this.Salvar(ultimoNome);
     }
 
-    private static int GetPontuacao()
+    private int GetPontuacao()
     {
-        var totalDePontos = VALOR_DE_ERRO;
-        if (ExistePontuacao())
+        var objetoPontuacao = GameObject.FindGameObjectWithTag(Pontuacao.TAG_PONTUACAO);
+        if (Existe(objetoPontuacao))
         {
-            totalDePontos = Pontuacao.Instancia.Pontos;
+            this.pontuacao = objetoPontuacao.GetComponent<Pontuacao>();
+        }
+
+        var totalDePontos = VALOR_DE_ERRO;
+
+        if (Existe(this.pontuacao))
+        {
+            totalDePontos = this.pontuacao.Pontos;
         }
 
         return totalDePontos;
@@ -51,16 +61,16 @@ public class NovaPontuacao : MonoBehaviour {
         return ultimoNome;
     }
 
-    private static bool ExistePontuacao()
+    private static bool Existe(Object objeto)
     {
-        return Pontuacao.Instancia != null;
+        return objeto != null;
     }
 
     public void AlterarNome(string nome)
     {
         this.nome.text = nome;
         this.ranking.AlterarNome(nome, index);
-        
+
         PlayerPrefs.SetString(CHAVE_ULTIMO_NOME, nome);
     }
 

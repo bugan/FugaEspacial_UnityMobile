@@ -41,7 +41,7 @@ public class ControlePause : MonoBehaviour
         }
 
 #elif UNITY_ANDROID
-        if(naoEstaoTocandoNaTela)
+        if(NaoEstaoTocandoNaTela())
         {
             this.PararOJogo();
         }else
@@ -96,6 +96,7 @@ public class ControlePause : MonoBehaviour
         yield return new WaitForSecondsRealtime(tempo);
         acao();
     }
+
 
     private bool TarefaEstaEmEspera(Coroutine tarefa)
     {

@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212882820194718786}
   - component: {fileID: 50260580053075784}
   - component: {fileID: 61276168237055288}
-  - component: {fileID: 114274696972326626}
   - component: {fileID: 114245909540524810}
   m_Layer: 0
   m_Name: Jogador
@@ -116,18 +115,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114274696972326626
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1314052368903796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d13c7ea0f2e8cf9438f368889ab42701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidade: 15
 --- !u!212 &212882820194718786
 SpriteRenderer:
   m_ObjectHideFlags: 1

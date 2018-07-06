@@ -201,10 +201,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 789197164}
-  prefabInimigo: {fileID: 1134229065056836, guid: 83f2d8f359aa4004f9a935c6a860ce11,
-    type: 2}
+  prefabInimigo: {fileID: 0}
   tempo: 1
-  raio: 3
+  raio: 0
 --- !u!1 &679329952
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,8 +237,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -112.700195, y: -104.9}
-  m_SizeDelta: {x: 180, y: 174.9}
+  m_AnchoredPosition: {x: -51.4, y: -45.3}
+  m_SizeDelta: {x: 57.4, y: 55.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &679329954
 MonoBehaviour:
@@ -702,7 +701,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1096.1, y: 205.5}
+  m_SizeDelta: {x: 371.7, y: 69.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &996169615
 MonoBehaviour:
@@ -844,10 +843,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 789197164}
-  prefabInimigo: {fileID: 1134229065056836, guid: 83f2d8f359aa4004f9a935c6a860ce11,
-    type: 2}
+  prefabInimigo: {fileID: 0}
   tempo: 1
-  raio: 3
+  raio: 0
 --- !u!4 &1028723155
 Transform:
   m_ObjectHideFlags: 0
@@ -1117,7 +1115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1344085549
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1244,8 +1242,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 162.9, y: -141.8}
-  m_SizeDelta: {x: 235.9, y: 217.1}
+  m_AnchoredPosition: {x: 49, y: -42}
+  m_SizeDelta: {x: 66.1, y: 60.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1572548061
 MonoBehaviour:
@@ -1458,7 +1456,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
@@ -1536,10 +1534,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 789197164}
-  prefabInimigo: {fileID: 1134229065056836, guid: 83f2d8f359aa4004f9a935c6a860ce11,
-    type: 2}
+  prefabInimigo: {fileID: 0}
   tempo: 1
-  raio: 3
+  raio: 0
 --- !u!4 &1882994928
 Transform:
   m_ObjectHideFlags: 0

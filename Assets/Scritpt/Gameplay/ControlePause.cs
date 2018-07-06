@@ -21,7 +21,7 @@ public class ControlePause : MonoBehaviour
     private bool estaParado;
 
     private delegate void AcaoDePause();
-    
+
     private void Awake()
     {
         this.MudarEscalaDeTempo(ESCALA_NORMAL_DE_TEMPO);
@@ -29,9 +29,7 @@ public class ControlePause : MonoBehaviour
 
     private void Update()
     {
-#if UNITY_EDITOR
-
-        if (teclaEstaPressionada(KeyCode.A))
+        if (NaoEstaoTocandoNaTela())
         {
             this.PararOJogo();
         }
@@ -39,39 +37,26 @@ public class ControlePause : MonoBehaviour
         {
             this.ContinuarOJogo();
         }
-
-#elif UNITY_ANDROID
-        if(NaoEstaoTocandoNaTela())
-        {
-            this.PararOJogo();
-        }else
-        {
-            this.ContinuarOJogo();   
-        }
-#endif
-
-    }
-
-    private bool teclaEstaPressionada(KeyCode tecla)
-    {
-        return Input.GetKey(tecla);
     }
 
     private bool NaoEstaoTocandoNaTela()
     {
+#if UNITY_EDITOR
+        return Input.GetKey(KeyCode.A);
+#elif UNITY_ANDROID
         return Input.touchCount == 0;
+#endif
     }
 
     private void PararOJogo()
     {
-
         this.AjustarTarefasEmEspera(ref this.tarefaAntesDeParar, ref this.tarefaAntesDeRetornar, EsperarEExecutarAcao(this.tempoAntesDeParar, MostrarPainelDePause));
         this.MudarEscalaDeTempo(this.escalaDeTempoDuranteOPause);
     }
 
     private void ContinuarOJogo()
     {
-        this.AjustarTarefasEmEspera(ref this.tarefaAntesDeRetornar, ref  this.tarefaAntesDeParar, EsperarEExecutarAcao(this.tempoAntesDeRetornar, RetomarJogo));
+        this.AjustarTarefasEmEspera(ref this.tarefaAntesDeRetornar, ref this.tarefaAntesDeParar, EsperarEExecutarAcao(this.tempoAntesDeRetornar, RetomarJogo));
     }
 
     private void RetomarJogo()
@@ -96,7 +81,6 @@ public class ControlePause : MonoBehaviour
         yield return new WaitForSecondsRealtime(tempo);
         acao();
     }
-
 
     private bool TarefaEstaEmEspera(Coroutine tarefa)
     {

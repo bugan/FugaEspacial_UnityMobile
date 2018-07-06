@@ -22,7 +22,7 @@ public class Gerador : MonoBehaviour
         InvokeRepeating("Instanciar", 0, this.tempo);
         if(this.pontuacao == null)
         {
-            this.pontuacao = GameObject.FindGameObjectWithTag(Pontuacao.TAG_PONTUACAO).GetComponent<Pontuacao>();
+            this.pontuacao = GameObject.FindObjectOfType<Pontuacao>();
         }
     }
 

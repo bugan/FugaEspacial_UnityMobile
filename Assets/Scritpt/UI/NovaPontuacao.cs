@@ -34,11 +34,7 @@ public class NovaPontuacao : MonoBehaviour
 
     private int GetPontuacao()
     {
-        var objetoPontuacao = GameObject.FindGameObjectWithTag(Pontuacao.TAG_PONTUACAO);
-        if (Existe(objetoPontuacao))
-        {
-            this.pontuacao = objetoPontuacao.GetComponent<Pontuacao>();
-        }
+        this.pontuacao = GameObject.FindObjectOfType<Pontuacao>();
 
         var totalDePontos = VALOR_DE_ERRO;
 

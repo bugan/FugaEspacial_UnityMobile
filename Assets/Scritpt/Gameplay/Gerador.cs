@@ -13,9 +13,12 @@ public class Gerador : MonoBehaviour
     [SerializeField]
     private float raio;
 
+    private WaitForSeconds espera;
+
     private void Start()
     {
-        InvokeRepeating("Instanciar", 0, this.tempo);
+        this.espera = new WaitForSeconds(this.tempo);
+        StartCoroutine(this.IniciarGeracao());
     }
 
     private void Instanciar()
@@ -34,5 +37,14 @@ public class Gerador : MonoBehaviour
 
         var posicaoInimigo = this.transform.position + posicaoAleatoria;
         inimigo.transform.position = posicaoInimigo;
+    }
+
+    private IEnumerator IniciarGeracao()
+    {
+        while (true)
+        {
+            yield return this.espera;
+            this.Instanciar();
+        }
     }
 }

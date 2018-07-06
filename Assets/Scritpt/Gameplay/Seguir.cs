@@ -9,7 +9,6 @@ public class Seguir : MonoBehaviour
     [SerializeField]
     private float velocidadeMaxima = 1;
     
-
     private Rigidbody2D fisica;
 
     private void Awake()

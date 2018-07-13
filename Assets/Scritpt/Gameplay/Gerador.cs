@@ -40,7 +40,7 @@ public class Gerador : MonoBehaviour
     private void InjetarDependencias(GameObject gameObjectDoInimigo)
     {
         gameObjectDoInimigo.GetComponent<Seguir>().SetAlvo(this.alvo);
-        gameObjectDoInimigo.GetComponent<Pontuavel>().pontuacao = this.pontuacao;
+        gameObjectDoInimigo.GetComponent<Pontuavel>().SetPontuacao(this.pontuacao);
     }
 
     private void DefinirPosicaoInimigo(GameObject inimigo)

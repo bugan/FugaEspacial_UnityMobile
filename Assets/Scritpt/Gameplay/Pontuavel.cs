@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pontuavel : MonoBehaviour
 {
     [HideInInspector]
-    public Pontuacao pontuacao;
+    private Pontuacao pontuacao;
 
     public void Pontuar()
     {
@@ -14,5 +14,10 @@ public class Pontuavel : MonoBehaviour
         {
             Handheld.Vibrate();
         }
+    }
+
+    public void SetPontuacao(Pontuacao pontuacao)
+    {
+        this.pontuacao = pontuacao;
     }
 }

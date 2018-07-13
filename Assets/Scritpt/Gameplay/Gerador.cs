@@ -10,18 +10,22 @@ public class Gerador : MonoBehaviour
     [SerializeField]
     private float raio;
 
-    private WaitForSeconds espera;
+    [SerializeField]
+    private Transform alvo;
+
+
 
     private void Start()
     {
-        this.espera = new WaitForSeconds(this.tempo);
-        StartCoroutine(this.IniciarGeracao());
+        
+        this.InvokeRepeating("Instanciar", 0, this.tempo);
     }
 
     private void Instanciar()
     {
         var inimigo = GameObject.Instantiate(this.prefabInimigo);
         this.DefinirPosicaoInimigo(inimigo);
+        inimigo.GetComponent<Seguir>().SetAlvo(this.alvo);
     }
 
     private void DefinirPosicaoInimigo(GameObject inimigo)
@@ -33,14 +37,5 @@ public class Gerador : MonoBehaviour
 
         var posicaoInimigo = this.transform.position + posicaoAleatoria;
         inimigo.transform.position = posicaoInimigo;
-    }
-
-    private IEnumerator IniciarGeracao()
-    {
-        while (true)
-        {
-            yield return this.espera;
-            this.Instanciar();
-        }
     }
 }

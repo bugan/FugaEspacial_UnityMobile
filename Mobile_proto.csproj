@@ -234,6 +234,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scritpt\Gameplay\EventoDeColisao.cs" />
     <Compile Include="Assets\Scritpt\Gameplay\Gerador.cs" />
+    <Compile Include="Assets\Scritpt\Gameplay\Pontuacao.cs" />
+    <Compile Include="Assets\Scritpt\Gameplay\SegueMouse.cs" />
+    <Compile Include="Assets\Scritpt\Gameplay\Seguir.cs" />
     <Compile Include="Assets\Scritpt\LerCena.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

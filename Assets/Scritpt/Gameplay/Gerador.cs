@@ -12,6 +12,8 @@ public class Gerador : MonoBehaviour
 
     [SerializeField]
     private Transform alvo;
+    [SerializeField]
+    private Pontuacao pontuacao;
 
 
 
@@ -26,6 +28,7 @@ public class Gerador : MonoBehaviour
         var inimigo = GameObject.Instantiate(this.prefabInimigo);
         this.DefinirPosicaoInimigo(inimigo);
         inimigo.GetComponent<Seguir>().SetAlvo(this.alvo);
+        inimigo.GetComponent<Pontuavel>().SetPontuacao(this.pontuacao);
     }
 
     private void DefinirPosicaoInimigo(GameObject inimigo)

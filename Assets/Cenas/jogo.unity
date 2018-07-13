@@ -161,6 +161,62 @@ Prefab:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 867da2ed13811b347a09b4756abcd004, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &399305598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 399305600}
+  - component: {fileID: 399305599}
+  m_Layer: 0
+  m_Name: Pontuacao
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &399305599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399305598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80bc10d4b96392049b6eb6e17efbb2c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aoPontuar:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 679329952}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: MeuEventoDinamicoInt, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!4 &399305600
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399305598}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.6452403, y: 2.356573, z: -0.20703125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &563932336
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +262,7 @@ MonoBehaviour:
   tempo: 1
   raio: 3
   alvo: {fileID: 2122680331}
+  pontuacao: {fileID: 399305599}
 --- !u!1 &679329952
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,8 +272,8 @@ GameObject:
   m_Component:
   - component: {fileID: 679329953}
   - component: {fileID: 679329956}
-  - component: {fileID: 679329955}
   - component: {fileID: 679329954}
+  - component: {fileID: 679329955}
   m_Layer: 5
   m_Name: TextoPontuacao
   m_TagString: Untagged
@@ -283,7 +340,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 679329952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7ba6c681019724f89187514834d9eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 83e68b8e53598d943a82421f2dc00f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!222 &679329956
@@ -829,6 +886,7 @@ MonoBehaviour:
   tempo: 1
   raio: 3
   alvo: {fileID: 2122680331}
+  pontuacao: {fileID: 399305599}
 --- !u!4 &1028723155
 Transform:
   m_ObjectHideFlags: 0
@@ -1506,6 +1564,7 @@ MonoBehaviour:
   tempo: 1
   raio: 3
   alvo: {fileID: 2122680331}
+  pontuacao: {fileID: 399305599}
 --- !u!4 &1882994928
 Transform:
   m_ObjectHideFlags: 0

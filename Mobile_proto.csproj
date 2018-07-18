@@ -240,7 +240,9 @@
     <Compile Include="Assets\Scritpt\Gameplay\SegueMouse.cs" />
     <Compile Include="Assets\Scritpt\Gameplay\Seguir.cs" />
     <Compile Include="Assets\Scritpt\LerCena.cs" />
+    <Compile Include="Assets\Scritpt\NaoDestruir.cs" />
     <Compile Include="Assets\Scritpt\TextoDinamico.cs" />
+    <Compile Include="Assets\Scritpt\UI\NovaPontuacao.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

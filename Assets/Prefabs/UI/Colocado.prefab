@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224877240351247108}
   - component: {fileID: 222009959053965298}
   - component: {fileID: 114145139011611816}
+  - component: {fileID: 114987283820865188}
   m_Layer: 5
   m_Name: Colocado
   m_TagString: Untagged
@@ -205,6 +206,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 000
+--- !u!114 &114987283820865188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1262929780163700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494688579cf937d48a7e3ffe71252e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colocacao: {fileID: 114422298874303448}
+  nome: {fileID: 114424553458254046}
+  pontuacao: {fileID: 114898176999620420}
 --- !u!222 &222009959053965298
 CanvasRenderer:
   m_ObjectHideFlags: 1

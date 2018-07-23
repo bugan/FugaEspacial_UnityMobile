@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class NovaPontuacao : MonoBehaviour {
     private const int VALOR_DE_ERRO = -1;
-
+    [SerializeField]
+    private Ranking ranking;
     [SerializeField]
     private Text textoPontuacao;
 
@@ -22,6 +23,8 @@ public class NovaPontuacao : MonoBehaviour {
         }
 
         this.textoPontuacao.text = totalDePontos.ToString();
+
+        this.ranking.AdicionarPontuacao(totalDePontos, "teste");
 	}
 	
 	private bool Existe(Object objeto)
